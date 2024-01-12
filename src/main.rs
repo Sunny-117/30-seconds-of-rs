@@ -1,32 +1,3 @@
-# 30-seconds-of-rs
-
-30 seconds to collect useful rust snippet.
-
-[![License](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://github.com/Sunny-117/30-seconds-of-rs/blob/master/LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![](https://img.shields.io/github/followers/sunny-117.svg?style=social&label=Follow%20Me)](https://github.com/Sunny-117)
-
-> 你可以在 30 秒或更短时间内收集有用的 rust 代码片段。
-
-- 使用 <kbd>Ctrl</kbd> + <kbd>F</kbd> 或者 <kbd>command</kbd> + <kbd>F</kbd> 来查找代码片段。
-- 代码片段基于 Rust，如果你还不熟悉可以在[这里](https://course.rs/about-book.html)学习。
-
-## 目录
-
-### 📚 应用类
-
-<details>
-<summary>详细信息</summary>
-
-- [`简易计算器`](#calc)
-
-</details>
-
-### calc
-
-输入表达式，格式如 1 + 2 或 3 \* 4，输入 'exit' 退出:
-
-```rust
 use std::io;
 
 fn main() {
@@ -94,7 +65,3 @@ fn main() {
         println!("结果: {}", result);
     }
 }
-
-```
-
-<br>[⬆ 回到顶部](#目录)
