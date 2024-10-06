@@ -19,6 +19,7 @@
 <summary>详细信息</summary>
 
 - [`简易计算器`](#calc)
+- [`文件读取器`](#fileReader)
 
 </details>
 
@@ -93,6 +94,29 @@ fn main() {
         // 输出结果
         println!("结果: {}", result);
     }
+}
+
+```
+
+### fileReader
+
+```rust
+use std::fs;
+
+fn main() -> Result<(), std::io::Error> {
+    let content = read_file("assets/demo.csv");
+    match content {
+        Ok(content) => println!("{}", content),
+        Err(e) => println!("Error: {}", e),
+    }
+    // 同上功能，语法糖写法：
+    let content = read_file("assets/demo.csv")?;
+    println!("{}", content);
+    Ok(())
+}
+
+fn read_file(file_path: &str) -> Result<String, std::io::Error> {
+    fs::read_to_string(file_path)
 }
 
 ```
