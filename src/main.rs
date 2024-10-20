@@ -1,17 +1,19 @@
-use std::fs;
+use std::time::Instant;
 
-fn main() -> Result<(), std::io::Error> {
-    let content = read_file("assets/demo.csv");
-    match content {
-        Ok(content) => println!("{}", content),
-        Err(e) => println!("Error: {}", e),
+fn fibonacci(n: u32) -> u32 {
+    if n <= 1 {
+        return n;
     }
-    // 同上功能，语法糖写法：
-    let content = read_file("assets/demo.csv")?;
-    println!("{}", content);
-    Ok(())
+    fibonacci(n - 1) + fibonacci(n - 2)
 }
 
-fn read_file(file_path: &str) -> Result<String, std::io::Error> {
-    fs::read_to_string(file_path)
+fn main() {
+    let n = 40;
+    let start_time = Instant::now();
+
+    let result = fibonacci(n);
+
+    let duration = start_time.elapsed();
+    println!("Fibonacci({}) = {}", n, result);
+    println!("耗时: {} 毫秒", duration.as_millis());
 }

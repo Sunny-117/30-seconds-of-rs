@@ -23,6 +23,15 @@
 
 </details>
 
+### 📚 数学类
+
+<details>
+<summary>详细信息</summary>
+
+- [`斐波那契`](#fibonacci)
+
+</details>
+
 ### calc
 
 输入表达式，格式如 1 + 2 或 3 \* 4，输入 'exit' 退出:
@@ -117,6 +126,31 @@ fn main() -> Result<(), std::io::Error> {
 
 fn read_file(file_path: &str) -> Result<String, std::io::Error> {
     fs::read_to_string(file_path)
+}
+
+```
+
+### fibonacci
+
+```rust
+use std::time::Instant;
+
+fn fibonacci(n: u32) -> u32 {
+    if n <= 1 {
+        return n;
+    }
+    fibonacci(n - 1) + fibonacci(n - 2)
+}
+
+fn main() {
+    let n = 40;
+    let start_time = Instant::now();
+
+    let result = fibonacci(n);
+
+    let duration = start_time.elapsed();
+    println!("Fibonacci({}) = {}", n, result);
+    println!("耗时: {} 毫秒", duration.as_millis());
 }
 
 ```
